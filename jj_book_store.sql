@@ -164,7 +164,7 @@ ON OrderDetail
 AFTER INSERT
 AS
 BEGIN
--- Calculate TotalAmount based on Quantity * Price
+-- to Calculate TotalAmount based on Quantity * Price
 UPDATE OrderDetail
 SET OrderDetail.UnitPrice = NEW.StockQuantity * NEW.UnitPrice
 FROM OrderDetail, inserted NEW
